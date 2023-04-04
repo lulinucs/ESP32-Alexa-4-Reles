@@ -83,48 +83,7 @@ void write_callback(Device *device, Param *param, const param_val_t val, void *p
   }
 }
 
-/*void write_callback1(Device *device, Param *param, const param_val_t val, void *priv_data, write_ctx_t *ctx)
-{
-    const char *device_name = device->getDeviceName();
-    const char *param_name = param->getParamName();
 
-    if(strcmp(param_name, "Power") == 0) {
-        Serial.printf("Received value = %s for %s - %s\n", val.val.b? "true" : "false", device_name, param_name);
-        Serial.printf("CALLBACK1");
-        switch1_state = val.val.b;
-        (switch1_state == false) ? digitalWrite(gpio_switch1, LOW) : digitalWrite(gpio_switch1, HIGH);
-        param->updateAndReport(val);
-    }
-}
-
-void write_callback2(Device *device, Param *param, const param_val_t val, void *priv_data, write_ctx_t *ctx)
-{
-    const char *device_name = device->getDeviceName();
-    const char *param_name = param->getParamName();
-
-    if(strcmp(param_name, "Power") == 0) {
-        Serial.printf("Received value = %s for %s - %s\n", val.val.b? "true" : "false", device_name, param_name);
-        Serial.printf("CALLBACK2");
-        switch2_state = val.val.b;
-        (switch2_state == false) ? digitalWrite(gpio_switch2, LOW) : digitalWrite(gpio_switch2, HIGH);
-        param->updateAndReport(val);
-    }
-}
-
-void write_callback3(Device *device, Param *param, const param_val_t val, void *priv_data, write_ctx_t *ctx)
-{
-    const char *device_name = device->getDeviceName();
-    const char *param_name = param->getParamName();
-
-    if(strcmp(param_name, "Power") == 0) {
-        Serial.printf("Received value = %s for %s - %s\n", val.val.b? "true" : "false", device_name, param_name);
-        Serial.printf("CALLBACK3");
-        switch3_state = val.val.b;
-        (switch3_state == false) ? digitalWrite(gpio_switch3, LOW) : digitalWrite(gpio_switch3, HIGH);
-        param->updateAndReport(val);
-    }
-}
-*/
 void setup()
 {
     Serial.begin(115200);
@@ -204,38 +163,6 @@ void loop()
         
     }  
       
-/*      if(digitalRead(gpio_1) == HIGH) { //Push button pressed   
-        switch1_state = !switch1_state;
-        Serial.printf("Toggle State1 to %s.\n", switch1_state ? "true" : "false");
-        my_switch1.updateAndReportParam(ESP_RMAKER_DEF_POWER_NAME, switch1_state);
-        (switch1_state == false) ? digitalWrite(gpio_switch1, LOW) : digitalWrite(gpio_switch1, HIGH);
-        delay(100);
-      }
-      
-      if(digitalRead(gpio_2) == HIGH) { //Push button pressed
-        switch2_state = !switch2_state;
-        Serial.printf("Toggle State2 to %s.\n", switch2_state ? "true" : "false");
-        my_switch2.updateAndReportParam(ESP_RMAKER_DEF_POWER_NAME, switch2_state);
-        (switch2_state == false) ? digitalWrite(gpio_switch2, LOW) : digitalWrite(gpio_switch2, HIGH);
-        delay(100);
-      }
-      
-      if(digitalRead(gpio_3) == HIGH) { //Push button pressed
-        switch3_state = !switch3_state;
-        Serial.printf("Toggle State3 to %s.\n", switch3_state ? "true" : "false");
-        my_switch3.updateAndReportParam(ESP_RMAKER_DEF_POWER_NAME, switch3_state);
-        (switch3_state == false) ? digitalWrite(gpio_switch3, LOW) : digitalWrite(gpio_switch3, HIGH);
-        delay(100);
-      }
-     
-      if(digitalRead(gpio_4) == HIGH) { //Push button pressed
-        switch4_state = !switch4_state;
-        Serial.printf("Toggle State4 to %s.\n", switch4_state ? "true" : "false");
-        my_switch4.updateAndReportParam(ESP_RMAKER_DEF_POWER_NAME, switch4_state);
-        (switch4_state == false) ? digitalWrite(gpio_switch4, LOW) : digitalWrite(gpio_switch4, HIGH);
-        delay(100);
-      }
-      */
     
     delay(100);
 }
